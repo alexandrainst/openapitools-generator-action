@@ -20,6 +20,10 @@ inputs:
     description: If set, the OpenAPI document will be loaded from this URL instead of openapi-file.
     required: false
     default: UNSET
+  output-folder:
+    description: If set, the OpenAPI generator will output to the specified folder.
+    required: false
+    default: generated-api
   config-file:
     description: The path to the config file to be passed along to the OpenAPITools generator
     required: false
@@ -36,4 +40,4 @@ runs:
   using: composite
   steps:
     - shell: bash
-      run: python ${{ github.action_path }}/entrypoint.py ${{ inputs.generator }} ${{ inputs.generator-tag }} ${{ inputs.openapi-file }} ${{ inputs.openapi-url }} ${{ inputs.config-file }} ${{ inputs.template-dir }} ${{ inputs.command-args}}
+      run: python ${{ github.action_path }}/entrypoint.py ${{ inputs.generator }} ${{ inputs.generator-tag }} ${{ inputs.openapi-file }} ${{ inputs.openapi-url }} ${{ inputs.output-folder }} ${{ inputs.config-file }} ${{ inputs.template-dir }} ${{ inputs.command-args}}
