@@ -4,7 +4,7 @@ branding:
   icon: target
   color: green
 
-inputs:
+inputs: 
   generator:
     description: The name of the generator (i.e. the language to generate the client library in) to use e.g. "typescript-angular"
     required: true
@@ -40,4 +40,4 @@ runs:
   using: composite
   steps:
     - shell: bash
-      run: python3 ${{ github.action_path }}/entrypoint.py ${{ inputs.generator }} ${{ inputs.generator-tag }} ${{ inputs.openapi-file }} ${{ inputs.openapi-url }} ${{ inputs.config-file }} ${{ inputs.template-dir }} ${{ inputs.command-args}}
+      run: python ${{ github.action_path }}/entrypoint.py ${{ inputs.generator }} ${{ inputs.generator-tag }} ${{ inputs.openapi-file }} ${{ inputs.openapi-url }} ${{ inputs.output-folder }} ${{ inputs.config-file }} ${{ inputs.template-dir }} ${{ inputs.command-args}}
