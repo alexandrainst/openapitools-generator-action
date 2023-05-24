@@ -20,6 +20,10 @@ inputs:
     description: If set, the OpenAPI document will be loaded from this URL instead of openapi-file.
     required: false
     default: UNSET
+  output-folder:
+    description: If set, the OpenAPI generator will output to the specified folder.
+    required: false
+    default: generated-api
   config-file:
     description: The path to the config file to be passed along to the OpenAPITools generator
     required: false
