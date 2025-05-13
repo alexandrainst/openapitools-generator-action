@@ -14,7 +14,7 @@ jobs:
           generator: rust
           output-folder: rust-client
           config-file: test_data/config.yml
-          openapi-url: https://raw.githubusercontent.com/openapi-generators/openapi-python-client/refs/heads/main/end_to_end_tests/baseline_openapi_3.0.json
+          openapi-url: https://raw.githubusercontent.com/openapi-generators/openapi-python-client/refs/heads/main/end_to_end_tests/baseline_openapi_3.1.yaml
       - run: cd rust-client
   smoke-test-file:
     runs-on: ubuntu-latest
