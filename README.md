@@ -21,6 +21,10 @@ The path to the OpenAPI document (both JSON and YAML are supported). Defaults to
 
 The URL to load the OpenAPI document from. If set, `openapi-file` will be ignored.
 
+### `output-folder`
+
+If set, the OpenAPI generator will output the generated server/client library to this folder.
+
 ### `docker-repository`
 
 The Docker repository uses as source for  `docker-image`. Defaults to `docker.io`.
@@ -57,14 +61,14 @@ jobs:
 
       # Checkout your code
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       # Generate your OpenAPI document (if you don't write it manually)
 
       # Use the action to generate a client package
       # This uses the default path for the openapi document and thus assumes there is an openapi.json in the current workspace.
       - name: Generate Angular Client
-        uses: openapi-generators/openapitools-generator-action@v1
+        uses: alexandrainst/openapitools-generator-action@v3
         with:
           generator: typescript-angular
           config-file: angular-generator-config.yml
@@ -85,14 +89,14 @@ jobs:
 
       # Checkout your code
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       # Generate your OpenAPI document (if you don't write it manually)
 
       # Use the action to generate a client package
       # This uses the default path for the openapi document and thus assumes there is an openapi.json in the current workspace.
       - name: Generate Angular Client
-        uses: openapi-generators/openapitools-generator-action@v1
+        uses: alexandrainst/openapitools-generator-action@v3
         with:
           generator: typescript-angular
           config-file: angular-generator-config.yml
