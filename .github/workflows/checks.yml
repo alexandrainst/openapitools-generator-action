@@ -6,7 +6,7 @@ on:
 
 jobs:
   smoke-test-url:
-    runs-on: [ 'self-hosted', 'linux', 'x64' ]
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4.2.1
       - uses: alexandrainst/openapitools-generator-action@v3
@@ -16,7 +16,7 @@ jobs:
           openapi-url: https://raw.githubusercontent.com/openapi-generators/openapi-python-client/main/end_to_end_tests/baseline_openapi_3.0.json
       - run: cd rust-client
   smoke-test-file:
-    runs-on: [ 'self-hosted', 'linux', 'x64' ]
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4.2.1
       - uses: alexandrainst/openapitools-generator-action@v3
@@ -26,7 +26,7 @@ jobs:
           openapi-file: test_data/openapi.json
       - run: cd rust-client
   smoke-test-absolute-file:
-    runs-on: [ 'self-hosted', 'linux', 'x64' ]
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4.2.1
       - uses: alexandrainst/openapitools-generator-action@v3
@@ -36,7 +36,7 @@ jobs:
           openapi-file: /github/workspace/test_data/openapi.json
       - run: cd rust-client
   smoke-test-absolute-config:
-    runs-on: [ 'self-hosted', 'linux', 'x64' ]
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4.2.1
       - uses: alexandrainst/openapitools-generator-action@v3
@@ -46,7 +46,7 @@ jobs:
           openapi-file: test_data/openapi.json
       - run: cd rust-client
   smoke-test-template:
-    runs-on: [ 'self-hosted', 'linux', 'x64' ]
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4.2.1
       - uses: alexandrainst/openapitools-generator-action@v3
@@ -57,7 +57,7 @@ jobs:
           template-dir: test_data/templates/rust/
       - run: cd rust-client
   smoke-test-absolute-template:
-    runs-on: [ 'self-hosted', 'linux', 'x64' ]
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4.2.1
       - uses: alexandrainst/openapitools-generator-action@v3
@@ -68,7 +68,7 @@ jobs:
           template-dir: /github/workspace/test_data/templates/rust/
       - run: cd rust-client
   test-openapi-version:
-    runs-on: [ 'self-hosted', 'linux', 'x64' ]
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4.2.1
       - uses: alexandrainst/openapitools-generator-action@v3
@@ -79,7 +79,7 @@ jobs:
           generator-tag: v5.0.0
       - run: cd rust-client
   test-no-config:
-    runs-on: [ 'self-hosted', 'linux', 'x64' ]
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4.2.1
       - uses: alexandrainst/openapitools-generator-action@v3
@@ -88,7 +88,7 @@ jobs:
           openapi-file: test_data/openapi.json
       - run: cd rust-client
   test-command-args:
-    runs-on: [ 'self-hosted', 'linux', 'x64' ]
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4.2.1
       - uses: alexandrainst/openapitools-generator-action@v3
